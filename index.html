@@ -66,12 +66,18 @@
   </div>
 
   <!-- ========== FULL-BLEED HERO ========== -->
-  <!-- Text is already on the image — CTAs float on the right -->
   <section class="hero-fullbleed">
     <div class="hero-fullbleed__image">
-      <img src="Dip Pictures/Home Pic 4.png" alt="Dip Picks">
+      <picture>
+        <source media="(max-width: 768px)" srcset="Dip Pictures/New/Mobile Home Pic 828 x 1792.png">
+        <img src="Dip Pictures/New/Desktop Home Page Pic.png" alt="Dip Picks">
+      </picture>
     </div>
     <div class="hero-fullbleed__overlay"></div>
+    <!-- Text overlay PNG -->
+    <div class="hero-fullbleed__text-overlay">
+      <img src="Dip Pictures/New/YOU PICK THE DIP WE SEND THE DIP PICK.png" alt="You pick the dip, we send the Dip Pick">
+    </div>
     <div class="hero-fullbleed__cta-right">
       <div class="hero-cta-item">
         <a href="shop.html" class="btn btn--primary btn--lg">Get My Dip Pick</a>
