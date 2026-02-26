@@ -211,83 +211,85 @@
       </div>
 
       <div class="grid-3" style="gap: 32px;">
+
         <!-- Bundle: You Pick Two -->
-        <a href="product.html" class="bundle-card" style="text-decoration: none; color: inherit;">
-          <div class="bundle-card__images">
-            <div class="bundle-card__image-slot">
-              <img src="Dip Pictures/Buffalo Chicken.png" alt="Bundle Selection 1">
-            </div>
-            <div class="bundle-card__image-slot">
-              <img src="Dip Pictures/Spinach Artichoke.png" alt="Bundle Selection 2">
-            </div>
-          </div>
+        <div class="bundle-card" data-max-picks="2">
           <div class="bundle-card__body">
             <h3 class="bundle-card__name">You Pick Two</h3>
-            <p class="bundle-card__desc">Choose any 2 regular dips and save $4.</p>
+            <p class="bundle-card__desc">Choose any 2 flavors. Save more than buying separately.</p>
+            <p class="bundle-card__select-label">Pick your flavors <span class="bundle-card__select-count">(0/2 selected)</span></p>
+            <div class="bundle-card__dip-select">
+              <button class="bundle-card__dip-btn" data-dip="buffalo">Buffalo Chicken</button>
+              <button class="bundle-card__dip-btn" data-dip="spinach">Spinach Artichoke</button>
+              <button class="bundle-card__dip-btn" data-dip="queso">Queso</button>
+              <button class="bundle-card__dip-btn" data-dip="dill">Dill Pickle</button>
+            </div>
+            <div class="dip-card__sizes">
+              <button class="dip-card__size-btn active" data-price="32.00" data-savings="4.00">Regular</button>
+              <button class="dip-card__size-btn" data-price="52.00" data-savings="6.00">Large</button>
+            </div>
             <div class="bundle-card__footer">
               <div>
-                <div class="bundle-card__price">$32</div>
-                <div class="bundle-card__savings">Save $4</div>
+                <div class="bundle-card__price">$32.00</div>
+                <div class="bundle-card__savings">Save $4.00</div>
               </div>
-              <button class="bundle-card__add" aria-label="Add to cart" onclick="event.preventDefault(); event.stopPropagation();">+</button>
+              <button class="bundle-card__add" aria-label="Add to cart">+</button>
             </div>
           </div>
-        </a>
+        </div>
 
         <!-- Bundle: The Crowd Pleaser -->
-        <a href="product.html" class="bundle-card" style="text-decoration: none; color: inherit;">
-          <div class="bundle-card__images">
-            <div class="bundle-card__image-slot">
-              <img src="Dip Pictures/Buffalo Chicken.png" alt="Bundle Selection 1">
-            </div>
-            <div class="bundle-card__image-slot">
-              <img src="Dip Pictures/Queso.png" alt="Bundle Selection 2">
-            </div>
-            <div class="bundle-card__image-slot">
-              <img src="Dip Pictures/Dill Pickle.png" alt="Bundle Selection 3">
-            </div>
-          </div>
+        <div class="bundle-card" data-max-picks="3">
           <div class="bundle-card__body">
             <h3 class="bundle-card__name">The Crowd Pleaser</h3>
-            <p class="bundle-card__desc">Pick any 3 regular dips and save $10.</p>
+            <p class="bundle-card__desc">Pick any 3 flavors. More variety, more happy people.</p>
+            <p class="bundle-card__select-label">Pick your flavors <span class="bundle-card__select-count">(0/3 selected)</span></p>
+            <div class="bundle-card__dip-select">
+              <button class="bundle-card__dip-btn" data-dip="buffalo">Buffalo Chicken</button>
+              <button class="bundle-card__dip-btn" data-dip="spinach">Spinach Artichoke</button>
+              <button class="bundle-card__dip-btn" data-dip="queso">Queso</button>
+              <button class="bundle-card__dip-btn" data-dip="dill">Dill Pickle</button>
+            </div>
+            <div class="dip-card__sizes">
+              <button class="dip-card__size-btn active" data-price="44.00" data-savings="10.00">Regular</button>
+              <button class="dip-card__size-btn" data-price="74.00" data-savings="13.00">Large</button>
+            </div>
             <div class="bundle-card__footer">
               <div>
-                <div class="bundle-card__price">$44</div>
-                <div class="bundle-card__savings">Save $10</div>
+                <div class="bundle-card__price">$44.00</div>
+                <div class="bundle-card__savings">Save $10.00</div>
               </div>
-              <button class="bundle-card__add" aria-label="Add to cart" onclick="event.preventDefault(); event.stopPropagation();">+</button>
+              <button class="bundle-card__add" aria-label="Add to cart">+</button>
             </div>
           </div>
-        </a>
+        </div>
 
         <!-- Bundle: The Full Send -->
-        <a href="product.html" class="bundle-card" style="text-decoration: none; color: inherit;">
-          <div class="bundle-card__images">
-            <div class="bundle-card__image-slot">
-              <img src="Dip Pictures/Buffalo Chicken.png" alt="Buffalo Chicken">
-            </div>
-            <div class="bundle-card__image-slot">
-              <img src="Dip Pictures/Spinach Artichoke.png" alt="Spinach Artichoke">
-            </div>
-            <div class="bundle-card__image-slot">
-              <img src="Dip Pictures/Queso.png" alt="Queso">
-            </div>
-            <div class="bundle-card__image-slot">
-              <img src="Dip Pictures/Dill Pickle.png" alt="Dill Pickle">
-            </div>
-          </div>
+        <div class="bundle-card" data-max-picks="4">
           <div class="bundle-card__body">
             <h3 class="bundle-card__name">The Full Send</h3>
-            <p class="bundle-card__desc">Get all 4 regular dips and save $18.</p>
+            <p class="bundle-card__desc">All 4 flavors. The whole lineup. Zero FOMO.</p>
+            <p class="bundle-card__select-label">All flavors included</p>
+            <div class="bundle-card__dip-select">
+              <button class="bundle-card__dip-btn selected locked" data-dip="buffalo">Buffalo Chicken</button>
+              <button class="bundle-card__dip-btn selected locked" data-dip="spinach">Spinach Artichoke</button>
+              <button class="bundle-card__dip-btn selected locked" data-dip="queso">Queso</button>
+              <button class="bundle-card__dip-btn selected locked" data-dip="dill">Dill Pickle</button>
+            </div>
+            <div class="dip-card__sizes">
+              <button class="dip-card__size-btn active" data-price="54.00" data-savings="18.00">Regular</button>
+              <button class="dip-card__size-btn" data-price="96.00" data-savings="20.00">Large</button>
+            </div>
             <div class="bundle-card__footer">
               <div>
-                <div class="bundle-card__price">$54</div>
-                <div class="bundle-card__savings">Save $18</div>
+                <div class="bundle-card__price">$54.00</div>
+                <div class="bundle-card__savings">Save $18.00</div>
               </div>
-              <button class="bundle-card__add" aria-label="Add to cart" onclick="event.preventDefault(); event.stopPropagation();">+</button>
+              <button class="bundle-card__add ready" aria-label="Add to cart">+</button>
             </div>
           </div>
-        </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -343,6 +345,110 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // ============================================================
+    // BUNDLE CARD INTERACTIVITY
+    // ============================================================
+    (function () {
+      document.querySelectorAll('.bundle-card').forEach(function (card) {
+        var maxPicks  = parseInt(card.dataset.maxPicks, 10);
+        var dipBtns   = card.querySelectorAll('.bundle-card__dip-btn');
+        var countEl   = card.querySelector('.bundle-card__select-count');
+        var addBtn    = card.querySelector('.bundle-card__add');
+        var sizeBtns  = card.querySelectorAll('.dip-card__size-btn');
+        var priceEl   = card.querySelector('.bundle-card__price');
+        var savingsEl = card.querySelector('.bundle-card__savings');
+
+        function getSelected() {
+          return card.querySelectorAll('.bundle-card__dip-btn.selected').length;
+        }
+
+        function refreshState() {
+          var count = getSelected();
+          if (countEl) countEl.textContent = '(' + count + '/' + maxPicks + ' selected)';
+          if (count >= maxPicks) {
+            addBtn.classList.add('ready');
+          } else {
+            addBtn.classList.remove('ready');
+          }
+        }
+
+        // Dip flavor toggles
+        dipBtns.forEach(function (btn) {
+          if (btn.classList.contains('locked')) return;
+          btn.addEventListener('click', function () {
+            if (btn.classList.contains('selected')) {
+              btn.classList.remove('selected');
+            } else if (getSelected() < maxPicks) {
+              btn.classList.add('selected');
+            }
+            refreshState();
+          });
+        });
+
+        // Size toggles
+        sizeBtns.forEach(function (sBtn) {
+          sBtn.addEventListener('click', function () {
+            sizeBtns.forEach(function (b) { b.classList.remove('active'); });
+            sBtn.classList.add('active');
+            if (priceEl)   priceEl.textContent   = '$' + sBtn.dataset.price;
+            if (savingsEl) savingsEl.textContent = 'Save $' + sBtn.dataset.savings;
+          });
+        });
+
+        // Add button feedback
+        if (addBtn) {
+          addBtn.addEventListener('click', function () {
+            if (!addBtn.classList.contains('ready') || addBtn.classList.contains('added')) return;
+            addBtn.classList.add('added');
+            addBtn.textContent = '✓';
+            setTimeout(function () {
+              addBtn.classList.remove('added');
+              addBtn.textContent = '+';
+            }, 1400);
+          });
+        }
+
+        // Initialize counter display
+        refreshState();
+      });
+
+      // ============================================================
+      // INDIVIDUAL DIP CARD — size toggle + add feedback
+      // ============================================================
+      document.querySelectorAll('.dip-card').forEach(function (card) {
+        var sizeBtns = card.querySelectorAll('.dip-card__size-btn');
+        var priceEl  = card.querySelector('.dip-card__price');
+        var addBtn   = card.querySelector('.dip-card__add');
+
+        sizeBtns.forEach(function (sBtn) {
+          sBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            sizeBtns.forEach(function (b) { b.classList.remove('active'); });
+            sBtn.classList.add('active');
+            var priceSpan = sBtn.querySelector('span');
+            if (priceEl && priceSpan) priceEl.textContent = priceSpan.textContent.trim();
+          });
+        });
+
+        if (addBtn) {
+          addBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (addBtn.classList.contains('added')) return;
+            addBtn.classList.add('added');
+            addBtn.textContent = '✓';
+            setTimeout(function () {
+              addBtn.classList.remove('added');
+              addBtn.textContent = '+';
+            }, 1400);
+          });
+        }
+      });
+    })();
+  </script>
 
   <script src="js/main.js"></script>
 </body>
