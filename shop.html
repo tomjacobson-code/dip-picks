@@ -430,40 +430,7 @@
         refreshState();
       });
 
-      // ============================================================
-      // INDIVIDUAL DIP CARD — size toggle + add feedback
-      // (main.js handles the primary logic; this block is removed to avoid double-binding)
-      // ============================================================
-      document.querySelectorAll('.dip-card').forEach(function (card) {
-        var sizeBtns = card.querySelectorAll('.dip-card__size-btn');
-        var priceEl  = card.querySelector('.dip-card__price');
-        var addBtn   = card.querySelector('.dip-card__add');
-
-        sizeBtns.forEach(function (sBtn) {
-          sBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            sizeBtns.forEach(function (b) { b.classList.remove('active'); });
-            sBtn.classList.add('active');
-            var priceSpan = sBtn.querySelector('span');
-            if (priceEl && priceSpan) priceEl.textContent = priceSpan.textContent.trim();
-          });
-        });
-
-        if (addBtn) {
-          addBtn.addEventListener('click', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            if (addBtn.classList.contains('added')) return;
-            addBtn.classList.add('added');
-            addBtn.textContent = '✓';
-            setTimeout(function () {
-              addBtn.classList.remove('added');
-              addBtn.textContent = '+';
-            }, 1400);
-          });
-        }
-      });
+      // Individual dip card add-to-cart is handled by main.js to avoid duplicate handlers
     })();
   </script>
 

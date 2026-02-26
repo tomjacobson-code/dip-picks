@@ -134,7 +134,17 @@ document.querySelectorAll('.dip-card').forEach(function (card) {
     var activeSizeBtn = card.querySelector('.dip-card__size-btn.active');
     var name = nameEl ? nameEl.textContent.trim() : 'Dip';
     var size = activeSizeBtn ? activeSizeBtn.textContent.trim().replace(/\$[\d.]+/, '').trim() : 'Regular';
-    var price = activeSizeBtn && activeSizeBtn.dataset.price ? parseFloat(activeSizeBtn.dataset.price) : 18.00;
+
+    // Price: prefer data-price attribute; fall back to the span inside the button
+    var price = 18.00;
+    if (activeSizeBtn) {
+      if (activeSizeBtn.dataset.price) {
+        price = parseFloat(activeSizeBtn.dataset.price);
+      } else {
+        var priceSpan = activeSizeBtn.querySelector('span');
+        if (priceSpan) price = parseFloat(priceSpan.textContent.replace('$', '')) || 18.00;
+      }
+    }
 
     addToCart({ type: 'dip', name: name, size: size, price: price });
 
