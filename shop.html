@@ -38,10 +38,10 @@
         </ul>
         <div class="nav__actions">
           <a href="shop.html" class="btn btn--primary btn--sm">Order Now</a>
-          <button class="nav__cart" aria-label="Cart">
+          <a href="cart.html" class="nav__cart" aria-label="Cart">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
             <span class="nav__cart-count">0</span>
-          </button>
+          </a>
           <button class="nav__toggle" id="navToggle" aria-label="Menu">
             <span></span><span></span><span></span>
           </button>
@@ -397,10 +397,26 @@
           });
         });
 
-        // Add button feedback
+        // Add button: add to cart + visual feedback
         if (addBtn) {
           addBtn.addEventListener('click', function () {
             if (!addBtn.classList.contains('ready') || addBtn.classList.contains('added')) return;
+
+            // Collect selected dips + size for cart
+            var nameEl = card.querySelector('.bundle-card__name');
+            var activeSizeBtn = card.querySelector('.dip-card__size-btn.active');
+            var selectedDips = Array.from(card.querySelectorAll('.bundle-card__dip-btn.selected'))
+              .map(function (b) { return b.textContent.trim(); });
+            var bundleName = nameEl ? nameEl.textContent.trim() : 'Bundle';
+            var size = activeSizeBtn ? activeSizeBtn.textContent.trim() : 'Regular';
+            var price = activeSizeBtn && activeSizeBtn.dataset.price ? parseFloat(activeSizeBtn.dataset.price) : 0;
+            var savings = activeSizeBtn && activeSizeBtn.dataset.savings ? parseFloat(activeSizeBtn.dataset.savings) : 0;
+
+            // Use global addToCart from main.js
+            if (typeof addToCart === 'function') {
+              addToCart({ type: 'bundle', name: bundleName, dips: selectedDips, size: size, price: price, savings: savings });
+            }
+
             addBtn.classList.add('added');
             addBtn.textContent = '✓';
             setTimeout(function () {
@@ -416,6 +432,7 @@
 
       // ============================================================
       // INDIVIDUAL DIP CARD — size toggle + add feedback
+      // (main.js handles the primary logic; this block is removed to avoid double-binding)
       // ============================================================
       document.querySelectorAll('.dip-card').forEach(function (card) {
         var sizeBtns = card.querySelectorAll('.dip-card__size-btn');

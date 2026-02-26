@@ -699,7 +699,7 @@ button {
 .hero-fullbleed__cta-right {
   position: absolute;
   right: clamp(32px, 6vw, 90px);
-  top: 44%;
+  top: 65%;
   transform: translateY(-50%);
   z-index: 2;
   display: flex;
@@ -732,14 +732,14 @@ button {
   border-radius: 20px;
 }
 
-/* Text overlay PNG — desktop: left-centered */
+/* Text overlay PNG — desktop: left-centered, impactful size */
 .hero-fullbleed__text-overlay {
   position: absolute;
   left: clamp(32px, 6vw, 80px);
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  width: clamp(280px, 38vw, 540px);
+  width: clamp(360px, 46vw, 660px);
   pointer-events: none;
 }
 
@@ -1519,40 +1519,40 @@ button {
     );
   }
 
-  /* Text overlay: upper portion of the image, above the subject */
+  /* Text overlay: bottom-anchored, sitting just above the CTA group */
   .hero-fullbleed__text-overlay {
     display: block;
+    top: auto;
+    bottom: 232px;
     left: 50%;
-    top: 7%;
-    transform: translate(-50%, 0);
-    width: 72%;
-    max-width: 300px;
+    transform: translateX(-50%);
+    width: 68%;
+    max-width: 275px;
   }
 
-  /* CTAs: side-by-side, smaller, floating above the dip bowl */
+  /* CTAs: stacked column, pushed up so last subtitle clears the browser bar */
   .hero-fullbleed__cta-right {
-    flex-direction: row;
+    flex-direction: column;
     top: auto;
-    bottom: 21%;
+    bottom: 28px;
     right: 50%;
     transform: translateX(50%);
-    width: calc(100% - 40px);
-    max-width: 360px;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    width: calc(100% - 48px);
+    max-width: 300px;
+    align-items: stretch;
+    gap: 8px;
   }
 
-  /* Smaller button size on mobile hero */
+  /* Full-width buttons, keep default size */
   .hero-fullbleed__cta-right .hero-cta-item .btn {
-    padding: 12px 18px;
-    font-size: 0.78rem;
-    white-space: nowrap;
+    width: 100%;
   }
 
-  /* Hide subtitle text under CTAs on mobile — keep it clean */
+  /* Subtitles: keep visible, slightly smaller */
   .hero-fullbleed__cta-right .hero-cta-item__sub {
-    display: none;
+    display: block;
+    font-size: 0.7rem;
+    margin-top: 4px;
   }
 
   .gifting-lifestyle {

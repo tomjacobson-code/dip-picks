@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — Dip Picks</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="Logos/Circle Logo Transparent.png" type="image/png">
+  <style>
+    /* ===== CART PAGE STYLES ===== */
+    .cart-page {
+      background: var(--white);
+      min-height: 80vh;
+      padding: clamp(32px, 5vw, 72px) 0 80px;
+    }
+
+    .cart-layout {
+      display: grid;
+      grid-template-columns: 1fr 460px;
+      gap: 48px;
+      align-items: flex-start;
+    }
+
+    /* ---- Order Summary (right column) ---- */
+    .order-summary {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 32px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .order-summary__title {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .order-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    .order-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .order-item__info {}
+
+    .order-item__name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+
+    .order-item__meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .order-item__dips {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .order-item__qty-price {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .order-item__price {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--dark);
+    }
+
+    .order-item__qty {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .order-item__savings {
+      font-size: 0.72rem;
+      color: var(--teal);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .order-item__remove {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      cursor: pointer;
+      padding: 2px 0;
+      text-decoration: underline;
+    }
+
+    .order-item__remove:hover {
+      color: var(--burnt-orange);
+    }
+
+    .order-totals {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 2px solid var(--card-border);
+    }
+
+    .order-totals__row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .order-totals__row--total {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .order-totals__savings-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--teal);
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    .cart-empty {
+      text-align: center;
+      padding: 48px 0;
+    }
+
+    .cart-empty p {
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    /* ---- Checkout Form (left column) ---- */
+    .checkout-form {}
+
+    .checkout-section {
+      margin-bottom: 40px;
+    }
+
+    .checkout-section__title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--card-border);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.78rem;
+    }
+
+    /* Purchase type toggle */
+    .purchase-toggle {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .purchase-toggle__option {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .purchase-toggle__option input {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .purchase-toggle__label {
+      display: block;
+      padding: 20px 16px;
+      border: 2px solid var(--card-border);
+      border-radius: 14px;
+      background: var(--card-bg);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      text-align: center;
+    }
+
+    .purchase-toggle__option input:checked + .purchase-toggle__label {
+      border-color: var(--burnt-orange);
+      background: rgba(217, 93, 57, 0.06);
+    }
+
+    .purchase-toggle__icon {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .purchase-toggle__name {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--dark);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .purchase-toggle__desc {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: block;
+      line-height: 1.4;
+    }
+
+    /* Form fields */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .form-row--full {
+      grid-template-columns: 1fr;
+    }
+
+    .form-row--three {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .form-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-field label {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--dark);
+    }
+
+    .form-field input,
+    .form-field textarea,
+    .form-field select {
+      padding: 13px 16px;
+      border: 1.5px solid var(--card-border);
+      border-radius: 10px;
+      background: #fff;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: var(--dark);
+      transition: border-color var(--transition-fast);
+      outline: none;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus,
+    .form-field select:focus {
+      border-color: var(--burnt-orange);
+    }
+
+    .form-field textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.6;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder {
+      color: #bbb;
+    }
+
+    /* Gift recipient section — hidden by default */
+    .gift-section {
+      display: none;
+      animation: fadeSlideIn 0.3s ease;
+    }
+
+    .gift-section.visible {
+      display: block;
+    }
+
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Personalized note section */
+    .note-section {
+      display: none;
+    }
+
+    .note-section.visible {
+      display: block;
+    }
+
+    .note-char-count {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: right;
+      margin-top: -8px;
+    }
+
+    .note-preview {
+      background: var(--card-bg);
+      border: 1px dashed var(--card-border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 16px;
+    }
+
+    .note-preview__label {
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .note-preview__text {
+      font-size: 0.9rem;
+      color: var(--dark);
+      line-height: 1.7;
+      font-style: italic;
+      min-height: 40px;
+      word-break: break-word;
+    }
+
+    .note-preview__placeholder {
+      color: #ccc;
+    }
+
+    /* Submit button */
+    .checkout-submit {
+      width: 100%;
+      padding: 18px;
+      font-size: 1rem;
+      margin-top: 8px;
+    }
+
+    .checkout-submit-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    .checkout-submit-note svg {
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .cart-layout {
+        grid-template-columns: 1fr;
+      }
+      .order-summary {
+        position: static;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+      .form-row--three {
+        grid-template-columns: 1fr 1fr;
+      }
+      .purchase-toggle {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-bar__track">
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> Free shipping on orders over $50</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> New drop: Dill Pickle Dip is here</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> Don't be shy, send the Dip Pick</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> Bold flavor. Zero apologies.</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> Free shipping on orders over $50</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> New drop: Dill Pickle Dip is here</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> Don't be shy, send the Dip Pick</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> Bold flavor. Zero apologies.</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo">
+          <img src="Logos/Dip Picks White Transparent Background.png" alt="Dip Picks">
+        </a>
+        <ul class="nav__links">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="shop.html" class="nav__link">Pick Your Dip</a></li>
+          <li><a href="gifting.html" class="nav__link">Send a Dip Pick</a></li>
+          <li><a href="index.html#our-story" class="nav__link">Our Story</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a href="shop.html" class="btn btn--primary btn--sm">Order Now</a>
+          <a href="cart.html" class="nav__cart active" aria-label="Cart">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="nav__cart-count">0</span>
+          </a>
+          <button class="nav__toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" id="mobileClose" aria-label="Close">✕</button>
+    <ul class="mobile-nav__links">
+      <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="shop.html" class="mobile-nav__link">Pick Your Dip</a></li>
+      <li><a href="gifting.html" class="mobile-nav__link">Send a Dip Pick</a></li>
+      <li><a href="index.html#our-story" class="mobile-nav__link">Our Story</a></li>
+    </ul>
+    <div style="margin-top: 40px;">
+      <a href="shop.html" class="btn btn--primary" style="width: 100%;">Order Now</a>
+    </div>
+  </div>
+  <div class="mobile-nav__overlay" id="mobileOverlay"></div>
+
+  <!-- ===== CART PAGE ===== -->
+  <div class="cart-page">
+    <div class="container">
+
+      <!-- Page heading -->
+      <div style="margin-bottom: 40px;">
+        <p class="section-header__eyebrow">Ready to commit?</p>
+        <h1 class="heading-xl" style="margin-bottom: 0;">
+          Your <span class="accent-underline">Cart</span>
+        </h1>
+      </div>
+
+      <!-- Empty state (shown if cart is empty) -->
+      <div class="cart-empty" id="cartEmpty" style="display: none;">
+        <p class="body-lg">Your cart is empty. Go grab some dip.</p>
+        <a href="shop.html" class="btn btn--primary btn--lg">Pick Your Dip</a>
+      </div>
+
+      <!-- Cart layout (shown if cart has items) -->
+      <div class="cart-layout" id="cartLayout">
+
+        <!-- LEFT: Checkout Form -->
+        <div class="checkout-form">
+
+          <!-- Step 1: Who is this for? -->
+          <div class="checkout-section">
+            <p class="checkout-section__title">Who is this for?</p>
+            <div class="purchase-toggle">
+              <label class="purchase-toggle__option">
+                <input type="radio" name="purchaseType" value="myself" checked>
+                <span class="purchase-toggle__label">
+                  <span class="purchase-toggle__icon">🙋</span>
+                  <span class="purchase-toggle__name">For Myself</span>
+                  <span class="purchase-toggle__desc">Ship directly to me</span>
+                </span>
+              </label>
+              <label class="purchase-toggle__option">
+                <input type="radio" name="purchaseType" value="gift">
+                <span class="purchase-toggle__label">
+                  <span class="purchase-toggle__icon">🎁</span>
+                  <span class="purchase-toggle__name">Send a Dip Pick</span>
+                  <span class="purchase-toggle__desc">Ship as a gift to someone else</span>
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Step 2: Your Info -->
+          <div class="checkout-section">
+            <p class="checkout-section__title">Your Info</p>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" placeholder="Tom" autocomplete="given-name">
+              </div>
+              <div class="form-field">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" placeholder="Jacobson" autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
+              </div>
+              <div class="form-field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" placeholder="(555) 000-0000" autocomplete="tel">
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3: Shipping Address (for myself) -->
+          <div class="checkout-section" id="shippingSection">
+            <p class="checkout-section__title">Shipping Address</p>
+            <div class="form-row form-row--full">
+              <div class="form-field">
+                <label for="address1">Street Address</label>
+                <input type="text" id="address1" placeholder="123 Main St" autocomplete="address-line1">
+              </div>
+            </div>
+            <div class="form-row form-row--full">
+              <div class="form-field">
+                <label for="address2">Apt, Suite, etc. (optional)</label>
+                <input type="text" id="address2" placeholder="Apt 4B" autocomplete="address-line2">
+              </div>
+            </div>
+            <div class="form-row form-row--three">
+              <div class="form-field">
+                <label for="city">City</label>
+                <input type="text" id="city" placeholder="Chicago" autocomplete="address-level2">
+              </div>
+              <div class="form-field">
+                <label for="state">State</label>
+                <input type="text" id="state" placeholder="IL" maxlength="2" autocomplete="address-level1">
+              </div>
+              <div class="form-field">
+                <label for="zip">ZIP</label>
+                <input type="text" id="zip" placeholder="60601" maxlength="10" autocomplete="postal-code">
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4: Gift Recipient (shown only for "Send a Dip Pick") -->
+          <div class="checkout-section gift-section" id="giftSection">
+            <p class="checkout-section__title" style="color: var(--burnt-orange);">Recipient Info</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px; margin-top: -8px;">
+              Where should we send the Dip Pick?
+            </p>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="recipientFirst">Recipient First Name</label>
+                <input type="text" id="recipientFirst" placeholder="Alex">
+              </div>
+              <div class="form-field">
+                <label for="recipientLast">Recipient Last Name</label>
+                <input type="text" id="recipientLast" placeholder="Smith">
+              </div>
+            </div>
+            <div class="form-row form-row--full">
+              <div class="form-field">
+                <label for="recipientAddress1">Street Address</label>
+                <input type="text" id="recipientAddress1" placeholder="456 Oak Ave">
+              </div>
+            </div>
+            <div class="form-row form-row--full">
+              <div class="form-field">
+                <label for="recipientAddress2">Apt, Suite, etc. (optional)</label>
+                <input type="text" id="recipientAddress2" placeholder="Unit 2">
+              </div>
+            </div>
+            <div class="form-row form-row--three">
+              <div class="form-field">
+                <label for="recipientCity">City</label>
+                <input type="text" id="recipientCity" placeholder="Austin">
+              </div>
+              <div class="form-field">
+                <label for="recipientState">State</label>
+                <input type="text" id="recipientState" placeholder="TX" maxlength="2">
+              </div>
+              <div class="form-field">
+                <label for="recipientZip">ZIP</label>
+                <input type="text" id="recipientZip" placeholder="73301" maxlength="10">
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 5: Personalized Note (shown for gift, optional for self) -->
+          <div class="checkout-section note-section" id="noteSection">
+            <p class="checkout-section__title">Personalized Note <span style="font-weight:400; text-transform:none; letter-spacing:0; font-size:0.8rem; color:var(--text-muted);">(included in the package)</span></p>
+            <div class="form-row form-row--full">
+              <div class="form-field">
+                <label for="giftNote">Your message</label>
+                <textarea id="giftNote" maxlength="200" placeholder="Happy birthday! You've been requesting my homemade dip for years, so I found the next best thing..."></textarea>
+              </div>
+            </div>
+            <p class="note-char-count"><span id="charCount">0</span>/200 characters</p>
+            <div class="note-preview" id="notePreview">
+              <p class="note-preview__label">Preview</p>
+              <p class="note-preview__text" id="notePreviewText">
+                <span class="note-preview__placeholder">Your note will appear here...</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <button class="btn btn--primary btn--lg checkout-submit" onclick="handleCheckout()">
+            Continue to Payment
+          </button>
+          <p class="checkout-submit-note">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Secure checkout. We never store payment info.
+          </p>
+
+        </div>
+
+        <!-- RIGHT: Order Summary -->
+        <div class="order-summary">
+          <p class="order-summary__title">Order Summary</p>
+          <div id="orderItems">
+            <!-- populated by JS -->
+          </div>
+          <div class="order-totals" id="orderTotals">
+            <!-- populated by JS -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="Logos/Dip Picks White Transparent Background.png" alt="Dip Picks">
+          <p class="footer__tagline">Bold, craveable dips made for hosting, gifting, and eating straight from the container.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Shop</h4>
+          <ul class="footer__links">
+            <li><a href="shop.html">Pick Your Dip</a></li>
+            <li><a href="gifting.html">Send a Dip Pick</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <ul class="footer__links">
+            <li><a href="index.html#our-story">Our Story</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Legal</h4>
+          <ul class="footer__links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Shipping</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Dip Picks. All rights reserved.</span>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78 2.92 2.92 0 0 1 .88.13V9.04a6.36 6.36 0 0 0-.88-.07 6.34 6.34 0 0 0 0 12.68 6.34 6.34 0 0 0 6.34-6.34V9.41a8.16 8.16 0 0 0 4.77 1.53v-3.4a4.85 4.85 0 0 1-1-.85z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M13.232 10.768L20 4"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ===== CART PAGE LOGIC =====
+
+    function getCart() {
+      try { return JSON.parse(localStorage.getItem('dipPicksCart') || '[]'); }
+      catch (e) { return []; }
+    }
+
+    function saveCart(cart) {
+      localStorage.setItem('dipPicksCart', JSON.stringify(cart));
+    }
+
+    function getCartCount() {
+      return getCart().reduce(function (s, i) { return s + i.qty; }, 0);
+    }
+
+    function updateCartBadges() {
+      var count = getCartCount();
+      document.querySelectorAll('.nav__cart-count').forEach(function (el) { el.textContent = count; });
+    }
+
+    function renderCart() {
+      var cart = getCart();
+      var cartEmpty = document.getElementById('cartEmpty');
+      var cartLayout = document.getElementById('cartLayout');
+      var orderItems = document.getElementById('orderItems');
+      var orderTotals = document.getElementById('orderTotals');
+
+      if (cart.length === 0) {
+        cartEmpty.style.display = 'block';
+        cartLayout.style.display = 'none';
+        return;
+      }
+
+      cartEmpty.style.display = 'none';
+      cartLayout.style.display = 'grid';
+
+      var subtotal = 0;
+      var totalSavings = 0;
+      var itemsHTML = '';
+
+      cart.forEach(function (item, idx) {
+        subtotal += item.price * item.qty;
+        if (item.savings) totalSavings += item.savings * item.qty;
+
+        var dipsLine = item.dips && item.dips.length
+          ? '<p class="order-item__dips">Flavors: ' + item.dips.join(', ') + '</p>'
+          : '';
+        var savingsLine = item.savings
+          ? '<p class="order-item__savings">Save $' + (item.savings).toFixed(2) + '</p>'
+          : '';
+
+        itemsHTML += '<div class="order-item">' +
+          '<div class="order-item__info">' +
+            '<p class="order-item__name">' + item.name + '</p>' +
+            '<p class="order-item__meta">' + item.size + '</p>' +
+            dipsLine +
+            savingsLine +
+            '<button class="order-item__remove" onclick="removeItem(' + idx + ')">Remove</button>' +
+          '</div>' +
+          '<div class="order-item__qty-price">' +
+            '<p class="order-item__price">$' + (item.price * item.qty).toFixed(2) + '</p>' +
+            (item.qty > 1 ? '<p class="order-item__qty">Qty: ' + item.qty + '</p>' : '') +
+          '</div>' +
+        '</div>';
+      });
+
+      orderItems.innerHTML = itemsHTML;
+
+      var shipping = subtotal >= 50 ? 0 : 6.99;
+      var total = subtotal + shipping;
+      var savingsText = totalSavings > 0
+        ? '<p class="order-totals__savings-note">You\'re saving $' + totalSavings.toFixed(2) + ' with bundles!</p>'
+        : '';
+
+      orderTotals.innerHTML =
+        '<div class="order-totals__row"><span>Subtotal</span><span>$' + subtotal.toFixed(2) + '</span></div>' +
+        '<div class="order-totals__row"><span>Shipping</span><span>' + (shipping === 0 ? '<span style="color:var(--teal)">Free</span>' : '$' + shipping.toFixed(2)) + '</span></div>' +
+        '<div class="order-totals__row order-totals__row--total"><span>Total</span><span>$' + total.toFixed(2) + '</span></div>' +
+        savingsText;
+    }
+
+    function removeItem(idx) {
+      var cart = getCart();
+      cart.splice(idx, 1);
+      saveCart(cart);
+      updateCartBadges();
+      renderCart();
+    }
+
+    // Purchase type toggle: show/hide gift and note sections
+    document.querySelectorAll('input[name="purchaseType"]').forEach(function (radio) {
+      radio.addEventListener('change', function () {
+        var isGift = this.value === 'gift';
+        var giftSection = document.getElementById('giftSection');
+        var noteSection = document.getElementById('noteSection');
+        var shippingSection = document.getElementById('shippingSection');
+
+        if (isGift) {
+          giftSection.classList.add('visible');
+          noteSection.classList.add('visible');
+          // Hide "your" shipping address when gifting
+          shippingSection.style.display = 'none';
+        } else {
+          giftSection.classList.remove('visible');
+          noteSection.classList.remove('visible');
+          shippingSection.style.display = 'block';
+        }
+      });
+    });
+
+    // Gift note character counter + live preview
+    var giftNote = document.getElementById('giftNote');
+    var charCount = document.getElementById('charCount');
+    var notePreviewText = document.getElementById('notePreviewText');
+
+    if (giftNote) {
+      giftNote.addEventListener('input', function () {
+        var val = giftNote.value;
+        charCount.textContent = val.length;
+        if (val.trim()) {
+          notePreviewText.textContent = val;
+          notePreviewText.classList.remove('note-preview__placeholder');
+        } else {
+          notePreviewText.innerHTML = '<span class="note-preview__placeholder">Your note will appear here...</span>';
+        }
+      });
+    }
+
+    // Checkout submit handler (placeholder — no real payment processing)
+    function handleCheckout() {
+      var cart = getCart();
+      if (cart.length === 0) {
+        alert('Your cart is empty!');
+        return;
+      }
+      var firstName = document.getElementById('firstName').value.trim();
+      if (!firstName) {
+        document.getElementById('firstName').focus();
+        return;
+      }
+      // In a real build, this submits to your payment processor
+      alert('Thanks, ' + firstName + '! Payment processing coming soon.');
+    }
+
+    // Init
+    updateCartBadges();
+    renderCart();
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
