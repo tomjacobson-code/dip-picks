@@ -1530,29 +1530,31 @@ button {
     max-width: 290px;
   }
 
-  /* CTAs: stacked column, pushed up so last subtitle clears the browser bar */
+  /* CTAs: side-by-side, small, anchored just below the text overlay PNG */
   .hero-fullbleed__cta-right {
-    flex-direction: column;
-    top: auto;
-    bottom: 28px;
+    flex-direction: row;
+    top: 52%;
+    bottom: auto;
     right: 50%;
     transform: translateX(50%);
     width: calc(100% - 48px);
-    max-width: 300px;
-    align-items: stretch;
-    gap: 8px;
+    max-width: 320px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
 
-  /* Full-width buttons, keep default size */
+  /* Smaller buttons — not full width, fit side by side */
   .hero-fullbleed__cta-right .hero-cta-item .btn {
-    width: 100%;
+    padding: 11px 18px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    width: auto;
   }
 
-  /* Subtitles: keep visible, slightly smaller */
+  /* Hide subtitles on mobile */
   .hero-fullbleed__cta-right .hero-cta-item__sub {
-    display: block;
-    font-size: 0.7rem;
-    margin-top: 4px;
+    display: none;
   }
 
   .gifting-lifestyle {
