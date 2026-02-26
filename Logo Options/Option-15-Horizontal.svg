@@ -1,0 +1,21 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: transparent -->
+  <defs>
+    <style>
+      .wordmark { font-family: 'Arial Black', 'Impact', sans-serif; font-weight: 900; font-size: 120px; fill: #1F1F1F; text-anchor: start; }
+    </style>
+  </defs>
+
+  <!-- DP Monogram (D and P sharing vertical stroke) -->
+  <g id="dp-monogram">
+    <!-- Shared vertical stroke -->
+    <rect x="95" y="60" width="35" height="280" fill="#1F1F1F"/>
+    <!-- D bowl (left curve) -->
+    <path d="M 130 60 Q 200 60 200 150 L 200 250 Q 200 340 130 340 L 130 340" stroke="#1F1F1F" stroke-width="28" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- P bowl (right curve) -->
+    <path d="M 130 60 Q 200 60 200 150 L 200 150 Q 200 200 130 200 L 130 200" stroke="#1F1F1F" stroke-width="28" fill="none" stroke-linecap="round" stroke-linejoin="round" transform="translate(120 0)"/>
+  </g>
+
+  <!-- "DIP PICKS" wordmark to the right -->
+  <text x="420" y="280" class="wordmark">DIP PICKS</text>
+</svg>

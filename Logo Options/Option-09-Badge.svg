@@ -1,0 +1,35 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background transparent -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+      .text-small { font-family: "Rockwell", "Roboto Slab", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 90px; fill: #1F1F1F; letter-spacing: 0.15em; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Circle border -->
+  <circle cx="400" cy="400" r="380" fill="none" stroke="#1F1F1F" stroke-width="6"/>
+
+  <!-- DIP arced at top -->
+  <defs>
+    <path id="topArc" d="M 150,400 A 250,250 0 0,1 650,400" fill="none"/>
+  </defs>
+  <text class="text-small" letter-spacing="0.15em">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">
+      DIP
+    </textPath>
+  </text>
+
+  <!-- PICKS arced at bottom -->
+  <defs>
+    <path id="bottomArc" d="M 650,400 A 250,250 0 0,1 150,400" fill="none"/>
+  </defs>
+  <text class="text-small" letter-spacing="0.15em">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">
+      PICKS
+    </textPath>
+  </text>
+
+  <!-- Small decorative triangle chip in center -->
+  <polygon points="400,330 420,380 380,380" fill="#D95D39"/>
+</svg>

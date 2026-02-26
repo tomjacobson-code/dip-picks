@@ -1,0 +1,17 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: transparent -->
+  <defs>
+    <style>
+      .bold-condensed { font-family: 'Arial Black', 'Impact', sans-serif; font-weight: 900; font-size: 180px; text-anchor: middle; fill: #1F1F1F; }
+    </style>
+  </defs>
+
+  <!-- "DIP" at top -->
+  <text x="400" y="240" class="bold-condensed">DIP</text>
+
+  <!-- Diagonal slash line (teal) -->
+  <line x1="200" y1="320" x2="600" y2="520" stroke="#2BB3A3" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- "PICKS" at bottom -->
+  <text x="400" y="670" class="bold-condensed">PICKS</text>
+</svg>

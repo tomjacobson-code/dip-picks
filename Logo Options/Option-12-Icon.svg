@@ -1,0 +1,13 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: transparent -->
+  <defs>
+    <style>
+      .d-font { font-family: 'Arial Black', 'Impact', sans-serif; font-weight: 900; font-size: 200px; text-anchor: middle; }
+      .d-white { fill: #FFFFFF; }
+    </style>
+  </defs>
+
+  <!-- "D" inside small orange circle -->
+  <circle cx="256" cy="256" r="180" fill="#D95D39"/>
+  <text x="256" y="330" class="d-font d-white">D</text>
+</svg>

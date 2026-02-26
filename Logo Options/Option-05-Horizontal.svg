@@ -1,0 +1,19 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .split-text { font-family: 'Impact', 'Arial Black', sans-serif; font-weight: 900; font-size: 120px; letter-spacing: -2px; }
+    </style>
+    <clipPath id="topHalf">
+      <rect x="0" y="0" width="1200" height="200"/>
+    </clipPath>
+    <clipPath id="bottomHalf">
+      <rect x="0" y="200" width="1200" height="200"/>
+    </clipPath>
+  </defs>
+
+  <!-- Top half in charcoal -->
+  <text x="50" y="160" class="split-text" fill="#1F1F1F" clip-path="url(#topHalf)">DIP PICKS</text>
+
+  <!-- Bottom half in burnt orange -->
+  <text x="50" y="160" class="split-text" fill="#D95D39" clip-path="url(#bottomHalf)">DIP PICKS</text>
+</svg>

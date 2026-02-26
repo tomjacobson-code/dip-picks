@@ -1,0 +1,28 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .badge-text { font-family: 'Impact', 'Arial Black', sans-serif; font-weight: 900; font-size: 90px; letter-spacing: -2px; text-anchor: middle; }
+    </style>
+    <clipPath id="circleTopHalf">
+      <rect x="0" y="0" width="800" height="400"/>
+    </clipPath>
+    <clipPath id="circleBottomHalf">
+      <rect x="0" y="400" width="800" height="400"/>
+    </clipPath>
+  </defs>
+
+  <!-- Circle border -->
+  <circle cx="400" cy="400" r="360" fill="none" stroke="#1F1F1F" stroke-width="8"/>
+
+  <!-- DIP text top half charcoal -->
+  <text x="400" y="330" class="badge-text" fill="#1F1F1F" clip-path="url(#circleTopHalf)">DIP</text>
+
+  <!-- DIP text bottom half burnt orange -->
+  <text x="400" y="330" class="badge-text" fill="#D95D39" clip-path="url(#circleBottomHalf)">DIP</text>
+
+  <!-- PICKS text top half charcoal -->
+  <text x="400" y="510" class="badge-text" fill="#1F1F1F" clip-path="url(#circleTopHalf)">PICKS</text>
+
+  <!-- PICKS text bottom half burnt orange -->
+  <text x="400" y="510" class="badge-text" fill="#D95D39" clip-path="url(#circleBottomHalf)">PICKS</text>
+</svg>

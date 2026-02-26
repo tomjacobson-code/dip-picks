@@ -1,0 +1,18 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: transparent -->
+  <defs>
+    <style>
+      .d-heavy { font-family: 'Arial Black', 'Impact', sans-serif; font-weight: 900; font-size: 280px; fill: #1F1F1F; text-anchor: middle; }
+      .p-light { font-family: 'Rockwell', 'Georgia', serif; font-weight: 400; font-size: 120px; fill: #1F1F1F; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Outer circle -->
+  <circle cx="256" cy="256" r="240" fill="none" stroke="#1F1F1F" stroke-width="8"/>
+
+  <!-- Large "D" in heavy weight -->
+  <text x="220" y="320" class="d-heavy">D</text>
+
+  <!-- Small "P" in light weight -->
+  <text x="310" y="280" class="p-light">P</text>
+</svg>

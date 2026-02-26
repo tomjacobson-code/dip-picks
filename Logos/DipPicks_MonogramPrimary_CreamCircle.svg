@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&amp;display=swap');
+    </style>
+  </defs>
+  <!-- Cream circle -->
+  <circle cx="200" cy="200" r="130" fill="#F5F0E8"/>
+
+  <!-- DP monogram -->
+  <text x="200" y="232"
+        font-family="'Playfair Display', Georgia, serif"
+        font-weight="900"
+        font-size="94px"
+        letter-spacing="-6px"
+        fill="#2C2C2C"
+        text-anchor="middle">DP</text>
+</svg>

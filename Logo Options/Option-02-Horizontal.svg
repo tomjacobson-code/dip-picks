@@ -1,0 +1,22 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .dip-text { font-family: 'Impact', 'Arial Black', sans-serif; font-weight: 900; font-size: 120px; letter-spacing: -2px; }
+      .dip { fill: #1F1F1F; }
+      .picks { fill: #1F1F1F; }
+    </style>
+  </defs>
+
+  <!-- Text: DIP -->
+  <text x="50" y="160" class="dip-text dip">DIP</text>
+
+  <!-- PICKS with chip instead of dot on I -->
+  <text x="420" y="160" class="dip-text picks">PICKS</text>
+
+  <!-- Chip triangle replacing the "I" dot (tittle) -->
+  <!-- Position: approximately where the dot on "I" would be -->
+  <polygon points="575,105 595,105 585,85" fill="#D95D39"/>
+
+  <!-- Add a bite mark effect by making it look like a chip -->
+  <path d="M 575 105 L 595 105 L 585 85 Z" fill="none" stroke="#1F1F1F" stroke-width="1"/>
+</svg>

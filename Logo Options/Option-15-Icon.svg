@@ -1,0 +1,21 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: transparent -->
+
+  <!-- DP Monogram - the strongest favicon mark -->
+  <!-- D and P share a vertical stroke, D faces left, P faces right -->
+  <g id="dp-monogram-master" transform="translate(256, 256)">
+    <!-- Shared vertical stroke in center -->
+    <rect x="-18" y="-120" width="36" height="240" fill="#1F1F1F"/>
+
+    <!-- D: Left side, curves outward to the left -->
+    <path d="M 18 -120 Q 110 -120 110 -30 L 110 90 Q 110 180 18 180"
+          stroke="#1F1F1F" stroke-width="28" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- P: Right side, curves outward to the right (smaller bowl on top) -->
+    <path d="M -18 -120 Q -110 -120 -110 -30 L -110 -30 Q -110 60 -18 60"
+          stroke="#1F1F1F" stroke-width="28" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Outer circle for icon context -->
+  <circle cx="256" cy="256" r="240" fill="none" stroke="#1F1F1F" stroke-width="6" opacity="0.3"/>
+</svg>

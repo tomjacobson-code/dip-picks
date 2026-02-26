@@ -1,0 +1,35 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background transparent -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+      .text-main { font-family: "Rockwell", "Roboto Slab", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 120px; fill: #1F1F1F; letter-spacing: 0.15em; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Left top bracket -->
+  <g stroke="#2BB3A3" stroke-width="10" fill="none" stroke-linecap="square">
+    <polyline points="120,150 170,150 170,330 120,330"/>
+  </g>
+
+  <!-- DIP text -->
+  <text x="400" y="280" class="text-main">DIP</text>
+
+  <!-- Right top bracket -->
+  <g stroke="#2BB3A3" stroke-width="10" fill="none" stroke-linecap="square">
+    <polyline points="680,150 630,150 630,330 680,330"/>
+  </g>
+
+  <!-- Left bottom bracket -->
+  <g stroke="#2BB3A3" stroke-width="10" fill="none" stroke-linecap="square">
+    <polyline points="120,470 170,470 170,650 120,650"/>
+  </g>
+
+  <!-- PICKS text -->
+  <text x="400" y="600" class="text-main">PICKS</text>
+
+  <!-- Right bottom bracket -->
+  <g stroke="#2BB3A3" stroke-width="10" fill="none" stroke-linecap="square">
+    <polyline points="680,470 630,470 630,650 680,650"/>
+  </g>
+</svg>

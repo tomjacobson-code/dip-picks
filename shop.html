@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop All Dips — Dip Picks</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="Logos/Circle Logo Transparent.png" type="image/png">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-bar__track">
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> Free shipping on orders over $50</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> New drop: Dill Pickle Dip is here</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> Don't be shy, send the Dip Pick</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> Bold flavor. Zero apologies.</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> Free shipping on orders over $50</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> New drop: Dill Pickle Dip is here</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> Don't be shy, send the Dip Pick</span>
+      <span class="announcement-bar__item"><span class="announcement-bar__dot"></span> Bold flavor. Zero apologies.</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo">
+          <img src="Logos/Dip Picks White Transparent Background.png" alt="Dip Picks">
+        </a>
+        <ul class="nav__links">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="shop.html" class="nav__link active">Pick Your Dip</a></li>
+          <li><a href="gifting.html" class="nav__link">Send a Dip Pick</a></li>
+          <li><a href="index.html#our-story" class="nav__link">Our Story</a></li>
+        </ul>
+        <div class="nav__actions">
+          <a href="shop.html" class="btn btn--primary btn--sm">Order Now</a>
+          <button class="nav__cart" aria-label="Cart">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <span class="nav__cart-count">0</span>
+          </button>
+          <button class="nav__toggle" id="navToggle" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav__close" id="mobileClose">&times;</button>
+    <ul class="mobile-nav__links">
+      <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+      <li><a href="shop.html" class="mobile-nav__link">Pick Your Dip</a></li>
+      <li><a href="gifting.html" class="mobile-nav__link">Send a Dip Pick</a></li>
+      <li><a href="index.html#our-story" class="mobile-nav__link">Our Story</a></li>
+    </ul>
+  </div>
+
+  <!-- ========== SHOP HERO ========== -->
+  <section class="section section--dark grain-overlay" style="padding: clamp(60px,8vw,100px) 0;">
+    <div class="container text-center">
+      <p class="section-header__eyebrow" style="color: var(--burnt-orange);">The lineup</p>
+      <h1 class="heading-xxl" style="margin-bottom: 16px;">Pick Your <span class="accent-underline">Dip</span></h1>
+      <p class="body-lg" style="color: rgba(245,241,235,0.55); max-width: 480px; margin: 0 auto;">
+        Four bold flavors. Real ingredients. Zero filler. Every chip deserves better.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========== INDIVIDUAL DIPS SECTION ========== -->
+  <section class="section section--white" style="padding-bottom: clamp(24px, 3vw, 40px);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <p class="section-header__eyebrow">The lineup</p>
+        <h2 class="heading-lg">Individual Dips</h2>
+      </div>
+
+      <div class="grid-4" style="gap: 32px;">
+        <!-- Buffalo Chicken -->
+        <a href="product.html" class="dip-card" style="text-decoration: none; color: inherit;">
+          <div class="dip-card__image-wrap">
+            <span class="dip-card__badge"><span class="badge badge--fan-fave">Fan Fave</span></span>
+            <img src="Dip Pictures/Buffalo Chicken.png" alt="Buffalo Chicken Dip">
+          </div>
+          <div class="dip-card__body">
+            <h3 class="dip-card__name">Buffalo Chicken</h3>
+            <p class="dip-card__desc">Creamy, tangy heat with real shredded chicken. The one everyone reaches for first.</p>
+
+            <!-- Size Options -->
+            <div class="dip-card__sizes">
+              <button class="dip-card__size-btn active" data-size="regular" onclick="event.preventDefault(); event.stopPropagation();">
+                Regular
+                <span style="font-size: 0.875em; opacity: 0.75;">$18.00</span>
+              </button>
+              <button class="dip-card__size-btn" data-size="large" onclick="event.preventDefault(); event.stopPropagation();">
+                Large
+                <span style="font-size: 0.875em; opacity: 0.75;">$29.00</span>
+              </button>
+            </div>
+
+            <div class="dip-card__footer">
+              <span class="dip-card__price">$18.00</span>
+              <button class="dip-card__add" aria-label="Add to cart" onclick="event.preventDefault(); event.stopPropagation();">+</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Spinach Artichoke -->
+        <a href="product.html" class="dip-card" style="text-decoration: none; color: inherit;">
+          <div class="dip-card__image-wrap">
+            <span class="dip-card__badge"><span class="badge badge--cult-classic">Cult Classic</span></span>
+            <img src="Dip Pictures/Spinach Artichoke.png" alt="Spinach Artichoke Dip">
+          </div>
+          <div class="dip-card__body">
+            <h3 class="dip-card__name">Spinach Artichoke</h3>
+            <p class="dip-card__desc">Rich, cheesy, and loaded with real spinach and artichoke hearts. A crowd-proof classic.</p>
+
+            <!-- Size Options -->
+            <div class="dip-card__sizes">
+              <button class="dip-card__size-btn active" data-size="regular" onclick="event.preventDefault(); event.stopPropagation();">
+                Regular
+                <span style="font-size: 0.875em; opacity: 0.75;">$18.00</span>
+              </button>
+              <button class="dip-card__size-btn" data-size="large" onclick="event.preventDefault(); event.stopPropagation();">
+                Large
+                <span style="font-size: 0.875em; opacity: 0.75;">$29.00</span>
+              </button>
+            </div>
+
+            <div class="dip-card__footer">
+              <span class="dip-card__price">$18.00</span>
+              <button class="dip-card__add" aria-label="Add to cart" onclick="event.preventDefault(); event.stopPropagation();">+</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Queso -->
+        <a href="product.html" class="dip-card" style="text-decoration: none; color: inherit;">
+          <div class="dip-card__image-wrap">
+            <span class="dip-card__badge"><span class="badge badge--mood">Mood</span></span>
+            <img src="Dip Pictures/Queso.png" alt="Queso Dip">
+          </div>
+          <div class="dip-card__body">
+            <h3 class="dip-card__name">Queso</h3>
+            <p class="dip-card__desc">Smooth, spicy, and dangerously addictive. Real cheese, real peppers, real good.</p>
+
+            <!-- Size Options -->
+            <div class="dip-card__sizes">
+              <button class="dip-card__size-btn active" data-size="regular" onclick="event.preventDefault(); event.stopPropagation();">
+                Regular
+                <span style="font-size: 0.875em; opacity: 0.75;">$18.00</span>
+              </button>
+              <button class="dip-card__size-btn" data-size="large" onclick="event.preventDefault(); event.stopPropagation();">
+                Large
+                <span style="font-size: 0.875em; opacity: 0.75;">$29.00</span>
+              </button>
+            </div>
+
+            <div class="dip-card__footer">
+              <span class="dip-card__price">$18.00</span>
+              <button class="dip-card__add" aria-label="Add to cart" onclick="event.preventDefault(); event.stopPropagation();">+</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Dill Pickle -->
+        <a href="product.html" class="dip-card" style="text-decoration: none; color: inherit;">
+          <div class="dip-card__image-wrap">
+            <span class="dip-card__badge"><span class="badge badge--new">New</span></span>
+            <img src="Dip Pictures/Dill Pickle.png" alt="Dill Pickle Dip">
+          </div>
+          <div class="dip-card__body">
+            <h3 class="dip-card__name">Dill Pickle</h3>
+            <p class="dip-card__desc">Tangy, dill-loaded, and polarizing in the best way. You either get it or you don't.</p>
+
+            <!-- Size Options -->
+            <div class="dip-card__sizes">
+              <button class="dip-card__size-btn active" data-size="regular" onclick="event.preventDefault(); event.stopPropagation();">
+                Regular
+                <span style="font-size: 0.875em; opacity: 0.75;">$18.00</span>
+              </button>
+              <button class="dip-card__size-btn" data-size="large" onclick="event.preventDefault(); event.stopPropagation();">
+                Large
+                <span style="font-size: 0.875em; opacity: 0.75;">$29.00</span>
+              </button>
+            </div>
+
+            <div class="dip-card__footer">
+              <span class="dip-card__price">$18.00</span>
+              <button class="dip-card__add" aria-label="Add to cart" onclick="event.preventDefault(); event.stopPropagation();">+</button>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== BUNDLES SECTION ========== -->
+  <section class="section section--white" id="bundles" style="padding-top: clamp(24px, 3vw, 40px);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <p class="section-header__eyebrow">Save More</p>
+        <h2 class="heading-lg" style="margin-bottom: 16px;">Bundle & Save</h2>
+        <p class="section-header__desc" style="max-width: 480px; margin: 0 auto;">Why pick one when you can grab a bundle? Get more dip, save more money.</p>
+      </div>
+
+      <div class="grid-3" style="gap: 32px;">
+        <!-- Bundle: You Pick Two -->
+        <a href="product.html" class="bundle-card" style="text-decoration: none; color: inherit;">
+          <div class="bundle-card__images">
+            <div class="bundle-card__image-slot">
+              <img src="Dip Pictures/Buffalo Chicken.png" alt="Bundle Selection 1">
+            </div>
+            <div class="bundle-card__image-slot">
+              <img src="Dip Pictures/Spinach Artichoke.png" alt="Bundle Selection 2">
+            </div>
+          </div>
+          <div class="bundle-card__body">
+            <h3 class="bundle-card__name">You Pick Two</h3>
+            <p class="bundle-card__desc">Choose any 2 regular dips and save $4.</p>
+            <div class="bundle-card__footer">
+              <div>
+                <div class="bundle-card__price">$32</div>
+                <div class="bundle-card__savings">Save $4</div>
+              </div>
+              <button class="bundle-card__add" aria-label="Add to cart" onclick="event.preventDefault(); event.stopPropagation();">+</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Bundle: The Crowd Pleaser -->
+        <a href="product.html" class="bundle-card" style="text-decoration: none; color: inherit;">
+          <div class="bundle-card__images">
+            <div class="bundle-card__image-slot">
+              <img src="Dip Pictures/Buffalo Chicken.png" alt="Bundle Selection 1">
+            </div>
+            <div class="bundle-card__image-slot">
+              <img src="Dip Pictures/Queso.png" alt="Bundle Selection 2">
+            </div>
+            <div class="bundle-card__image-slot">
+              <img src="Dip Pictures/Dill Pickle.png" alt="Bundle Selection 3">
+            </div>
+          </div>
+          <div class="bundle-card__body">
+            <h3 class="bundle-card__name">The Crowd Pleaser</h3>
+            <p class="bundle-card__desc">Pick any 3 regular dips and save $10.</p>
+            <div class="bundle-card__footer">
+              <div>
+                <div class="bundle-card__price">$44</div>
+                <div class="bundle-card__savings">Save $10</div>
+              </div>
+              <button class="bundle-card__add" aria-label="Add to cart" onclick="event.preventDefault(); event.stopPropagation();">+</button>
+            </div>
+          </div>
+        </a>
+
+        <!-- Bundle: The Full Send -->
+        <a href="product.html" class="bundle-card" style="text-decoration: none; color: inherit;">
+          <div class="bundle-card__images">
+            <div class="bundle-card__image-slot">
+              <img src="Dip Pictures/Buffalo Chicken.png" alt="Buffalo Chicken">
+            </div>
+            <div class="bundle-card__image-slot">
+              <img src="Dip Pictures/Spinach Artichoke.png" alt="Spinach Artichoke">
+            </div>
+            <div class="bundle-card__image-slot">
+              <img src="Dip Pictures/Queso.png" alt="Queso">
+            </div>
+            <div class="bundle-card__image-slot">
+              <img src="Dip Pictures/Dill Pickle.png" alt="Dill Pickle">
+            </div>
+          </div>
+          <div class="bundle-card__body">
+            <h3 class="bundle-card__name">The Full Send</h3>
+            <p class="bundle-card__desc">Get all 4 regular dips and save $18.</p>
+            <div class="bundle-card__footer">
+              <div>
+                <div class="bundle-card__price">$54</div>
+                <div class="bundle-card__savings">Save $18</div>
+              </div>
+              <button class="bundle-card__add" aria-label="Add to cart" onclick="event.preventDefault(); event.stopPropagation();">+</button>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FINAL CTA ========== -->
+  <section class="section section--dark grain-overlay final-cta">
+    <div class="container">
+      <h2 class="heading-xl final-cta__headline">Your Chips Are <span class="accent-underline">Waiting</span></h2>
+      <p class="final-cta__sub">Don't leave them hanging. Pick a dip and make it official.</p>
+      <a href="#" class="btn btn--primary btn--lg" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">Back to Top</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="Logos/Dip Picks White Transparent Background.png" alt="Dip Picks">
+          <p class="footer__tagline">Bold, craveable dips made for hosting, gifting, and eating straight from the container.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Shop</h4>
+          <ul class="footer__links">
+            <li><a href="shop.html">Pick Your Dip</a></li>
+            <li><a href="gifting.html">Send a Dip Pick</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Company</h4>
+          <ul class="footer__links">
+            <li><a href="index.html#our-story">Our Story</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Legal</h4>
+          <ul class="footer__links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Shipping</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>&copy; 2026 Dip Picks. All rights reserved.</span>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1 0-5.78 2.92 2.92 0 0 1 .88.13V9.04a6.36 6.36 0 0 0-.88-.07 6.34 6.34 0 0 0 0 12.68 6.34 6.34 0 0 0 6.34-6.34V9.41a8.16 8.16 0 0 0 4.77 1.53v-3.4a4.85 4.85 0 0 1-1-.85z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M13.232 10.768L20 4"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

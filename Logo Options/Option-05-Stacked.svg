@@ -1,0 +1,31 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .split-text { font-family: 'Impact', 'Arial Black', sans-serif; font-weight: 900; font-size: 140px; letter-spacing: -3px; text-anchor: middle; }
+    </style>
+    <clipPath id="topHalfDIP">
+      <rect x="0" y="0" width="800" height="350"/>
+    </clipPath>
+    <clipPath id="bottomHalfDIP">
+      <rect x="0" y="350" width="800" height="450"/>
+    </clipPath>
+    <clipPath id="topHalfPICKS">
+      <rect x="0" y="350" width="800" height="250"/>
+    </clipPath>
+    <clipPath id="bottomHalfPICKS">
+      <rect x="0" y="600" width="800" height="200"/>
+    </clipPath>
+  </defs>
+
+  <!-- DIP top half charcoal -->
+  <text x="400" y="250" class="split-text" fill="#1F1F1F" clip-path="url(#topHalfDIP)">DIP</text>
+
+  <!-- DIP bottom half burnt orange -->
+  <text x="400" y="250" class="split-text" fill="#D95D39" clip-path="url(#bottomHalfDIP)">DIP</text>
+
+  <!-- PICKS top half charcoal -->
+  <text x="400" y="550" class="split-text" fill="#1F1F1F" clip-path="url(#topHalfPICKS)">PICKS</text>
+
+  <!-- PICKS bottom half burnt orange -->
+  <text x="400" y="550" class="split-text" fill="#D95D39" clip-path="url(#bottomHalfPICKS)">PICKS</text>
+</svg>

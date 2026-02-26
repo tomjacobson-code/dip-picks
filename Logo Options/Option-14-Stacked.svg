@@ -1,0 +1,16 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: transparent -->
+  <defs>
+    <style>
+      .bold-font { font-family: 'Arial Black', 'Impact', sans-serif; font-weight: 900; font-size: 200px; }
+      .dip-left { fill: #1F1F1F; opacity: 0.4; text-anchor: start; }
+      .picks-right { fill: #D95D39; text-anchor: end; }
+    </style>
+  </defs>
+
+  <!-- "DIP" pushed to left edge -->
+  <text x="60" y="320" class="bold-font dip-left">DIP</text>
+
+  <!-- "PICKS" pushed to right edge -->
+  <text x="740" y="600" class="bold-font picks-right">PICKS</text>
+</svg>

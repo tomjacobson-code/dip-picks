@@ -1,0 +1,16 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background transparent -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+      .text-main { font-family: "Rockwell", "Roboto Slab", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 100px; fill: #1F1F1F; letter-spacing: 0.15em; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Rectangle with notched corners (ticket stub style) -->
+  <path d="M 120 120 L 680 120 L 680 130 L 690 130 L 690 670 L 680 670 L 680 680 L 120 680 L 120 670 L 110 670 L 110 130 L 120 130 Z"
+        fill="none" stroke="#1F1F1F" stroke-width="6" stroke-linejoin="miter"/>
+
+  <!-- DIP PICKS text -->
+  <text x="400" y="440" class="text-main">DIP PICKS</text>
+</svg>

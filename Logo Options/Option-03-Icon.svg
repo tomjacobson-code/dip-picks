@@ -1,0 +1,17 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .icon-text { font-family: 'Impact', 'Arial Black', sans-serif; font-weight: 900; font-size: 120px; letter-spacing: -3px; text-anchor: middle; }
+      .icon-text-color { fill: white; }
+    </style>
+  </defs>
+
+  <!-- Mustard circle background -->
+  <circle cx="256" cy="256" r="220" fill="#F2B134"/>
+
+  <!-- Charcoal border -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="#1F1F1F" stroke-width="8"/>
+
+  <!-- DP monogram text -->
+  <text x="256" y="320" class="icon-text icon-text-color">DP</text>
+</svg>

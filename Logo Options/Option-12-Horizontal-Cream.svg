@@ -1,0 +1,19 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cream background -->
+  <rect x="0" y="0" width="1200" height="400" fill="#FFF3E6"/>
+
+  <defs>
+    <style>
+      .bold-font { font-family: 'Arial Black', 'Impact', sans-serif; font-weight: 900; font-size: 140px; text-anchor: start; }
+      .dip-white { fill: #FFFFFF; }
+      .picks-dark { fill: #1F1F1F; }
+    </style>
+  </defs>
+
+  <!-- "DIP" inside burnt orange rounded rectangle (pill) -->
+  <rect x="50" y="80" width="380" height="240" rx="40" fill="#D95D39"/>
+  <text x="120" y="260" class="bold-font dip-white">DIP</text>
+
+  <!-- "PICKS" plain text next to it in charcoal -->
+  <text x="520" y="260" class="bold-font picks-dark">PICKS</text>
+</svg>

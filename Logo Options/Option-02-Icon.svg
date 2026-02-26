@@ -1,0 +1,17 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .icon-text { font-family: 'Impact', 'Arial Black', sans-serif; font-weight: 900; font-size: 100px; letter-spacing: -2px; text-anchor: middle; }
+      .icon-text-color { fill: #1F1F1F; }
+    </style>
+  </defs>
+
+  <!-- Large triangle chip with bite -->
+  <polygon points="100,350 420,350 260,80" fill="#D95D39"/>
+
+  <!-- Bite mark in the corner -->
+  <circle cx="380" cy="200" r="45" fill="white" stroke="none"/>
+
+  <!-- DP text inside the chip -->
+  <text x="200" y="260" class="icon-text icon-text-color">DP</text>
+</svg>

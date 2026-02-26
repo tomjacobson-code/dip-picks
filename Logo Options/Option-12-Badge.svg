@@ -1,0 +1,20 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: transparent -->
+  <defs>
+    <style>
+      .bold-font { font-family: 'Arial Black', 'Impact', sans-serif; font-weight: 900; text-anchor: middle; }
+      .dip-white { fill: #FFFFFF; font-size: 100px; }
+      .picks-cream { fill: #FFF3E6; font-size: 90px; }
+    </style>
+  </defs>
+
+  <!-- Full charcoal rounded rectangle -->
+  <rect x="80" y="80" width="640" height="640" rx="60" fill="#1F1F1F"/>
+
+  <!-- "DIP" inside smaller orange pill within -->
+  <rect x="220" y="200" width="360" height="140" rx="30" fill="#D95D39"/>
+  <text x="400" y="310" class="bold-font dip-white">DIP</text>
+
+  <!-- "PICKS" in cream below -->
+  <text x="400" y="580" class="bold-font picks-cream">PICKS</text>
+</svg>

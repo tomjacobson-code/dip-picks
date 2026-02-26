@@ -1,0 +1,17 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: transparent -->
+  <defs>
+    <style>
+      .letter-font { font-family: 'Arial Black', 'Impact', sans-serif; font-weight: 900; font-size: 200px; fill: #1F1F1F; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Outer circle -->
+  <circle cx="256" cy="256" r="240" fill="none" stroke="#1F1F1F" stroke-width="8"/>
+
+  <!-- "DP" with diagonal slash through -->
+  <text x="256" y="340" class="letter-font">DP</text>
+
+  <!-- Diagonal slash through middle (teal) -->
+  <line x1="140" y1="200" x2="372" y2="340" stroke="#2BB3A3" stroke-width="12" stroke-linecap="round"/>
+</svg>

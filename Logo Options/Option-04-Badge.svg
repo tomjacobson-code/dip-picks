@@ -1,0 +1,25 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .badge-text { font-family: 'Impact', 'Arial Black', sans-serif; font-weight: 900; font-size: 90px; letter-spacing: -2px; text-anchor: middle; }
+      .badge-text-color { fill: #1F1F1F; }
+    </style>
+  </defs>
+
+  <!-- Circle badge border -->
+  <circle cx="400" cy="400" r="360" fill="none" stroke="#1F1F1F" stroke-width="8"/>
+
+  <!-- Inner accent circle -->
+  <circle cx="400" cy="400" r="340" fill="none" stroke="#2BB3A3" stroke-width="2"/>
+
+  <!-- DIP PICKS text centered -->
+  <text x="400" y="420" class="badge-text badge-text-color">DIP</text>
+  <text x="400" y="500" class="badge-text badge-text-color">PICKS</text>
+
+  <!-- Cocktail pick flag accent at top -->
+  <!-- Stick -->
+  <line x1="400" y1="100" x2="400" y2="200" stroke="#2BB3A3" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Flag -->
+  <polygon points="400,100 430,80 430,120" fill="#2BB3A3"/>
+</svg>

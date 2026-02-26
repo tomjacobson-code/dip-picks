@@ -1,0 +1,18 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .icon-text { font-family: 'Impact', 'Arial Black', sans-serif; font-weight: 900; font-size: 80px; letter-spacing: -2px; text-anchor: middle; }
+      .icon-text-color { fill: #1F1F1F; }
+    </style>
+  </defs>
+
+  <!-- Stylized cocktail pick with flag -->
+  <!-- Long stick -->
+  <line x1="256" y1="100" x2="256" y2="320" stroke="#2BB3A3" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Flag at top -->
+  <polygon points="256,100 290,70 290,130" fill="#2BB3A3"/>
+
+  <!-- D inside lower part -->
+  <text x="256" y="380" class="icon-text icon-text-color">D</text>
+</svg>

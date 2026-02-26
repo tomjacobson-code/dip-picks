@@ -1,0 +1,25 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .badge-text { font-family: 'Impact', 'Arial Black', sans-serif; font-weight: 900; font-size: 90px; letter-spacing: -2px; text-anchor: middle; }
+      .badge-text-dip { fill: #1F1F1F; }
+      .badge-text-picks { fill: #D95D39; }
+    </style>
+  </defs>
+
+  <!-- Circle border in charcoal -->
+  <circle cx="400" cy="400" r="360" fill="none" stroke="#1F1F1F" stroke-width="8"/>
+
+  <!-- Inner circle -->
+  <circle cx="400" cy="400" r="340" fill="none" stroke="#D95D39" stroke-width="2"/>
+
+  <!-- DIP text -->
+  <text x="400" y="330" class="badge-text badge-text-dip">DIP</text>
+
+  <!-- Smear element in center -->
+  <path d="M 200 420 Q 300 435 400 425 Q 500 415 600 430"
+        stroke="#D95D39" stroke-width="30" fill="none" stroke-linecap="round"/>
+
+  <!-- PICKS text -->
+  <text x="400" y="510" class="badge-text badge-text-picks">PICKS</text>
+</svg>

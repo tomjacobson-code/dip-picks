@@ -1,0 +1,19 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .dip-text { font-family: 'Impact', 'Arial Black', sans-serif; font-weight: 900; font-size: 140px; letter-spacing: -3px; text-anchor: middle; }
+      .dip { fill: #1F1F1F; }
+      .picks { fill: #D95D39; }
+    </style>
+  </defs>
+
+  <!-- DIP (top) -->
+  <text x="400" y="250" class="dip-text dip">DIP</text>
+
+  <!-- Smear element between words -->
+  <path d="M 100 350 Q 200 360 300 355 Q 400 350 500 360 Q 600 370 700 355"
+        stroke="#D95D39" stroke-width="40" fill="none" stroke-linecap="round"/>
+
+  <!-- PICKS (bottom) -->
+  <text x="400" y="550" class="dip-text picks">PICKS</text>
+</svg>

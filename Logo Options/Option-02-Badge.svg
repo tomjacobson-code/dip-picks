@@ -1,0 +1,23 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .badge-text { font-family: 'Impact', 'Arial Black', sans-serif; font-weight: 900; font-size: 90px; letter-spacing: -2px; text-anchor: middle; }
+      .badge-text-color { fill: #1F1F1F; }
+    </style>
+  </defs>
+
+  <!-- Rounded rectangle label -->
+  <rect x="120" y="150" width="560" height="500" rx="40" fill="none" stroke="#1F1F1F" stroke-width="6"/>
+
+  <!-- DIP text -->
+  <text x="400" y="320" class="badge-text badge-text-color">DIP</text>
+
+  <!-- PICKS text -->
+  <text x="400" y="480" class="badge-text badge-text-color">PICKS</text>
+
+  <!-- Chip triangle accent -->
+  <polygon points="380,380 450,380 415,320" fill="#D95D39"/>
+
+  <!-- Bite mark circle -->
+  <circle cx="435" cy="345" r="20" fill="none" stroke="#D95D39" stroke-width="3"/>
+</svg>

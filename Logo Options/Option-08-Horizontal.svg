@@ -1,0 +1,22 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background transparent -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+      .text-main { font-family: "Rockwell", "Roboto Slab", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 100px; fill: #1F1F1F; letter-spacing: 0.15em; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Left bracket -->
+  <g stroke="#2BB3A3" stroke-width="12" fill="none" stroke-linecap="square">
+    <polyline points="200,100 250,100 250,300 200,300"/>
+  </g>
+
+  <!-- Main text: DIP PICKS -->
+  <text x="600" y="240" class="text-main">DIP PICKS</text>
+
+  <!-- Right bracket -->
+  <g stroke="#2BB3A3" stroke-width="12" fill="none" stroke-linecap="square">
+    <polyline points="1000,100 950,100 950,300 1000,300"/>
+  </g>
+</svg>

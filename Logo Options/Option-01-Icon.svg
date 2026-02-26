@@ -1,0 +1,18 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .icon-text { font-family: 'Impact', 'Arial Black', sans-serif; font-weight: 900; font-size: 100px; letter-spacing: -2px; text-anchor: middle; }
+      .icon-text-color { fill: #1F1F1F; }
+    </style>
+  </defs>
+
+  <!-- D -->
+  <text x="140" y="220" class="icon-text icon-text-color">D</text>
+
+  <!-- P -->
+  <text x="360" y="280" class="icon-text icon-text-color">P</text>
+
+  <!-- Smear accent element -->
+  <path d="M 80 300 Q 150 320 220 310 Q 280 300 340 320"
+        stroke="#D95D39" stroke-width="25" fill="none" stroke-linecap="round"/>
+</svg>

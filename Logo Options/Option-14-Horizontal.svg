@@ -1,0 +1,16 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: transparent -->
+  <defs>
+    <style>
+      .bold-condensed { font-family: 'Arial Black', 'Impact', sans-serif; font-weight: 900; font-size: 160px; text-anchor: start; }
+      .dip-dark { fill: #1F1F1F; opacity: 0.4; }
+      .picks-orange { fill: #D95D39; }
+    </style>
+  </defs>
+
+  <!-- "DIP" shifted left, charcoal at 40% opacity -->
+  <text x="50" y="280" class="bold-condensed dip-dark">DIP</text>
+
+  <!-- "PICKS" shifted right, burnt orange -->
+  <text x="550" y="280" class="bold-condensed picks-orange">PICKS</text>
+</svg>

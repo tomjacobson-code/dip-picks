@@ -1,0 +1,19 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .dip-text { font-family: 'Impact', 'Arial Black', sans-serif; font-weight: 900; font-size: 120px; letter-spacing: -2px; }
+      .dip { fill: #1F1F1F; }
+      .picks { fill: #1F1F1F; }
+    </style>
+  </defs>
+
+  <!-- Text: DIP PICKS -->
+  <text x="50" y="160" class="dip-text dip">DIP PICKS</text>
+
+  <!-- Cocktail pick flag extending from final S -->
+  <!-- Thin vertical line (stick) -->
+  <line x1="860" y1="80" x2="860" y2="160" stroke="#2BB3A3" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Triangular flag at top -->
+  <polygon points="860,80 885,70 885,90" fill="#2BB3A3"/>
+</svg>

@@ -1,0 +1,19 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: transparent -->
+  <defs>
+    <style>
+      .letter-font { font-family: 'Arial Black', 'Impact', sans-serif; font-weight: 900; font-size: 200px; }
+      .d-char { fill: #1F1F1F; opacity: 0.4; text-anchor: start; }
+      .p-char { fill: #D95D39; text-anchor: end; }
+    </style>
+  </defs>
+
+  <!-- Outer circle -->
+  <circle cx="256" cy="256" r="240" fill="none" stroke="#1F1F1F" stroke-width="8"/>
+
+  <!-- "D" offset left -->
+  <text x="120" y="320" class="letter-font d-char">D</text>
+
+  <!-- "P" offset right -->
+  <text x="360" y="320" class="letter-font p-char">P</text>
+</svg>

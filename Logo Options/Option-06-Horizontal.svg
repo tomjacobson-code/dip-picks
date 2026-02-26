@@ -1,0 +1,22 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background transparent -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+      .text-main { font-family: "Rockwell", "Roboto Slab", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 96px; fill: #1F1F1F; letter-spacing: 0.15em; text-anchor: middle; }
+      .text-small { font-family: "Rockwell", "Roboto Slab", Georgia, "Times New Roman", serif; font-weight: 400; font-size: 28px; fill: #D95D39; letter-spacing: 0.08em; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Top rule line -->
+  <line x1="250" y1="120" x2="950" y2="120" stroke="#1F1F1F" stroke-width="3"/>
+
+  <!-- Main text -->
+  <text x="600" y="240" class="text-main">DIP PICKS</text>
+
+  <!-- Bottom rule line -->
+  <line x1="250" y1="280" x2="950" y2="280" stroke="#1F1F1F" stroke-width="3"/>
+
+  <!-- EST. 2025 text -->
+  <text x="600" y="340" class="text-small">EST. 2025</text>
+</svg>

@@ -1,0 +1,15 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background transparent -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+      .text-main { font-family: "Rockwell", "Roboto Slab", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 140px; fill: #1F1F1F; letter-spacing: 0.1em; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- DP text -->
+  <text x="230" y="320" class="text-main">DP</text>
+
+  <!-- Large burnt orange circle as the period accent -->
+  <circle cx="380" cy="220" r="32" fill="#D95D39"/>
+</svg>

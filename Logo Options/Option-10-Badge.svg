@@ -1,0 +1,22 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background transparent -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+      .text-dip { font-family: "Rockwell", "Roboto Slab", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 100px; fill: #1F1F1F; letter-spacing: 0.15em; text-anchor: middle; }
+      .text-picks { font-family: "Rockwell", "Roboto Slab", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 100px; fill: #1F1F1F; letter-spacing: 0.15em; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Circle with thin stroke border -->
+  <circle cx="400" cy="400" r="340" fill="none" stroke="#1F1F1F" stroke-width="4"/>
+
+  <!-- DIP text -->
+  <text x="320" y="360" class="text-dip">DIP</text>
+
+  <!-- PICKS text -->
+  <text x="320" y="520" class="text-picks">PICKS</text>
+
+  <!-- Orange dot accent positioned as "period" -->
+  <circle cx="540" cy="310" r="28" fill="#D95D39"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: transparent -->
+  <defs>
+    <style>
+      .dip-heavy { font-family: 'Arial Black', 'Impact', sans-serif; font-weight: 900; font-size: 180px; fill: #1F1F1F; text-anchor: start; }
+      .picks-light { font-family: 'Rockwell', 'Georgia', serif; font-weight: 400; font-size: 100px; fill: #1F1F1F; text-anchor: start; letter-spacing: 0.2em; }
+    </style>
+  </defs>
+
+  <!-- "DIP" in ultra-heavy weight -->
+  <text x="50" y="280" class="dip-heavy">DIP</text>
+
+  <!-- "PICKS" in lighter, tracked-out slab serif -->
+  <text x="520" y="280" class="picks-light">PICKS</text>
+
+  <!-- Burnt orange connecting line underneath -->
+  <line x1="50" y1="310" x2="1100" y2="310" stroke="#D95D39" stroke-width="6" stroke-linecap="round"/>
+</svg>

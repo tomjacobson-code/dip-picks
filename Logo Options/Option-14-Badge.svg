@@ -1,0 +1,19 @@
+<svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background: transparent -->
+  <defs>
+    <style>
+      .bold-font { font-family: 'Arial Black', 'Impact', sans-serif; font-weight: 900; font-size: 120px; }
+      .dip-text { fill: #1F1F1F; opacity: 0.4; text-anchor: start; }
+      .picks-text { fill: #D95D39; text-anchor: end; }
+    </style>
+  </defs>
+
+  <!-- Circle background -->
+  <circle cx="400" cy="400" r="360" fill="none" stroke="#1F1F1F" stroke-width="12"/>
+
+  <!-- "DIP" offset up-left -->
+  <text x="200" y="320" class="bold-font dip-text">DIP</text>
+
+  <!-- "PICKS" offset down-right -->
+  <text x="620" y="560" class="bold-font picks-text">PICKS</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background transparent -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+      .text-main { font-family: "Rockwell", "Roboto Slab", Georgia, "Times New Roman", serif; font-weight: 700; font-size: 120px; fill: #1F1F1F; letter-spacing: 0.1em; text-anchor: middle; }
+    </style>
+  </defs>
+
+  <!-- Circle border -->
+  <circle cx="256" cy="256" r="240" fill="none" stroke="#1F1F1F" stroke-width="6"/>
+
+  <!-- DP text -->
+  <text x="256" y="320" class="text-main">DP</text>
+
+  <!-- Small star decorative element below -->
+  <polygon points="256,380 262,398 281,398 266,410 272,428 256,416 240,428 246,410 231,398 250,398" fill="#F2B134"/>
+</svg>
