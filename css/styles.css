@@ -1519,15 +1519,15 @@ button {
     );
   }
 
-  /* Text overlay: bottom-anchored, sitting just above the CTA group */
+  /* Text overlay: 42% from hero top, centered — matches teal target zone */
   .hero-fullbleed__text-overlay {
     display: block;
-    top: auto;
-    bottom: 232px;
+    top: 42%;
+    bottom: auto;
     left: 50%;
-    transform: translateX(-50%);
-    width: 68%;
-    max-width: 275px;
+    transform: translate(-50%, -50%);
+    width: 72%;
+    max-width: 290px;
   }
 
   /* CTAs: stacked column, pushed up so last subtitle clears the browser bar */
